@@ -1,0 +1,14 @@
+amt=12
+coins=[1,2,5]
+li=list()
+for i in range(0,amt+1):
+    li.append(0)
+li[0]=1
+
+for i in coins:
+    for j in range(i,amt+1):
+        if amt>=i:
+            li[j]+=li[j-i]
+    print("for coin {}".format(i),li)
+
+
