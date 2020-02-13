@@ -1,0 +1,47 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        data=s
+        temp=s
+        data=list(data)
+        sum=0
+        for i in data:
+            if i=="I":
+                sum=sum+1
+            elif i=="V":
+                sum+=5
+            elif i=="X":
+                sum+=10
+            elif i=="L":
+                sum+=50
+            elif i=="C":
+                sum+=100
+            elif i=="D":
+                sum+=500
+            elif i=="M":
+                sum+=1000
+    
+        c1=temp.count("IV")
+        c2=temp.count("IX")
+        c3=temp.count("XL")
+        c4=temp.count("XC")
+        c5=temp.count("CD")
+        c6=temp.count("CM")
+        
+        if c1==1:
+            sum-=2
+        if c2==1:
+            sum-=2
+        if c3==1:
+            sum-=20
+        if c4==1:
+            sum-=20
+        if c5==1:
+            sum-=200
+        if c6==1:
+            sum-=200
+    
+        return sum
+
+        
+        
+        
